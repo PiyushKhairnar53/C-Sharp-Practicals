@@ -19,7 +19,6 @@ namespace FileApplication
 
                 if (dirNotFound == false)
                 {
-
                     Console.WriteLine("Please enter name of file you want to create : ");
                     string? inputFileName = Console.ReadLine();
 
@@ -34,7 +33,6 @@ namespace FileApplication
                         if (fileExt.Equals(".txt"))
                         {
                             newFilePath = directoryPath + inputFileName + ".txt";
-
                             try
                             {
                                 File.Copy(filePath!, newFilePath);
@@ -61,9 +59,7 @@ namespace FileApplication
                         }
                     }
                 }
-
             } while (isFileNameValid == false);
-
         }
 
         public void ReplaceWord() 
@@ -71,13 +67,15 @@ namespace FileApplication
             Console.WriteLine("\n"+File.ReadAllText(newFilePath!));
             Console.WriteLine("\nPlease enter word to which you want to replace : ");
             string? oldWord = Console.ReadLine();
+            oldWord = " " + oldWord + " ";
+
             Console.WriteLine("Please enter new word to replace : ");
             string? newWord = Console.ReadLine();
+            newWord = " " + newWord + " ";
 
-            String strFile = File.ReadAllText(newFilePath!);
-            strFile = strFile.Replace(oldWord!,newWord);
+            string strFile = File.ReadAllText(newFilePath!);
+            strFile = strFile.Replace(oldWord!, newWord);
 
-           
             File.WriteAllText(newFilePath!, strFile);
             Console.WriteLine("\nFile after replacement...\n");
             Console.WriteLine(File.ReadAllText(newFilePath!));          
@@ -101,9 +99,7 @@ namespace FileApplication
                         Console.WriteLine(@"File Name - " + directoryPath + i.Name);
                     }
                 }
-
                 Directory.SetCurrentDirectory(directoryPath!);
-
             }
             catch (DirectoryNotFoundException dirException)
             {
@@ -124,7 +120,6 @@ namespace FileApplication
                 {    
                     File.ReadAllLines(filePath);               
                 }
-
             }
             catch (FileNotFoundException fileException)
             {
