@@ -11,7 +11,6 @@ namespace FileApplication
         public void CreateNewFile()
         {
             bool isFileNameValid = true;
-
             do
             {
                 Console.WriteLine("Selecting location.... ");
@@ -64,19 +63,29 @@ namespace FileApplication
 
         public void ReplaceWord() 
         {
+
             Console.WriteLine("\n"+File.ReadAllText(newFilePath!));
             Console.WriteLine("\nPlease enter word to which you want to replace : ");
             string? oldWord = Console.ReadLine();
-            oldWord = " " + oldWord + " ";
 
             Console.WriteLine("Please enter new word to replace : ");
             string? newWord = Console.ReadLine();
-            newWord = " " + newWord + " ";
 
+            var str = File.ReadAllText(newFilePath!);
+            var arr = str.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+            for (int i = 0; i < arr.Count; i++)
+            {
+                if (arr[i].StartsWith(oldWord!) && arr[i].EndsWith(oldWord!))
+                {
+                    arr[i] = arr[i].Replace(oldWord, newWord);
+                }
+            }
+
+            var res = string.Join(" ", arr);
+            File.WriteAllText(newFilePath!, res);
             string strFile = File.ReadAllText(newFilePath!);
-            strFile = strFile.Replace(oldWord!, newWord);
-
-            File.WriteAllText(newFilePath!, strFile);
+            
             Console.WriteLine("\nFile after replacement...\n");
             Console.WriteLine(File.ReadAllText(newFilePath!));          
         }
