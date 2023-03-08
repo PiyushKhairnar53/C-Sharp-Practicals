@@ -52,7 +52,7 @@ namespace CustomerAndFileApi.Controllers
         /// </summary>
         /// <param name="customer">Enter Customer</param>
         [HttpPost]
-        public IActionResult Post(Customer customer)
+        public IActionResult PostCustomerDetails(Customer customer)
         {
             int newCustomerId = customerList.Max(c => c.Id) + 1;
             customer.Id = newCustomerId;
@@ -67,7 +67,7 @@ namespace CustomerAndFileApi.Controllers
         /// <param name="newCustomer">Enter new details of customer</param>
         [HttpPut("{id}")]
         [SwaggerResponse(StatusCodes.Status204NoContent, "Customer successfully updated.")]
-        public IActionResult Update(int id, Customer newCustomer)
+        public IActionResult UpdateCustomerDetails(int id, Customer newCustomer)
         {
             var customer = customerList.FirstOrDefault(c => c.Id == id);
 
@@ -93,7 +93,7 @@ namespace CustomerAndFileApi.Controllers
         /// <param name="id">Enter Customer Id to delete.</param>
         [HttpDelete("{id}")]
         [SwaggerResponse(StatusCodes.Status204NoContent, "Customer successfully deleted.")]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteCustomerDeatils(int id)
         {
             var customer = customerList.FirstOrDefault(c => c.Id == id);
 
