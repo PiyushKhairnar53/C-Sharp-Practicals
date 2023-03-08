@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Xml.Linq;
 using CustomerAndFileApi.Models;
@@ -15,15 +16,13 @@ namespace CustomerAndFileApi.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        private static List<Customer> customerList = new List<Customer>()
-        {
-            new Customer() {Id = 1, Name = "ABC", Locations = new List<Locations>{new Locations(){Id = 1, City = "Pune", Address = "Bavdhan"} } },
-        };
+        private static List<Customer> customerList = new List<Customer>();
 
         /// <summary>
         /// Get all customer details.
         /// </summary>
         [HttpGet]
+        [SwaggerResponse(StatusCodes.Status200OK, "Returns all customers", typeof(Customer))]
         public IActionResult GetAllCustomers()
         {
             if (customerList != null)
@@ -40,20 +39,16 @@ namespace CustomerAndFileApi.Controllers
         /// <param name="id">Enter Id of Customer.</param>
         [HttpGet("{id}")]
         [SwaggerResponse(StatusCodes.Status200OK, "Returns the customer.", typeof(Customer))]
-        [SwaggerResponse(StatusCodes.Status404NotFound, "Customer not found.", typeof(Customer))]
         public IActionResult GetCustomerById(int id)
         {
             try
             {
-                var customer = customerList.FirstOrDefault(c => c.Id == id);
+                Customer customer = customerList.FirstOrDefault(c => c.Id == id);
                 if (customer != null)
                 {
                     return Ok(customer);
                 }
-                else
-                {
-                    return NotFound();
-                }
+               
             }
             catch (Exception exception) 
             {
@@ -68,10 +63,11 @@ namespace CustomerAndFileApi.Controllers
         /// </summary>
         /// <param name="customer">Enter Customer</param>
         [HttpPost]
+        [SwaggerResponse(StatusCodes.Status200OK, "Customer successfully added.")]
         public IActionResult AddCustomerDetails(Customer customer)
         {
-            int newCustomerId = customerList.Max(c => c.Id) + 1;
-            customer.Id = newCustomerId;
+            customer.Id = customerList.Count > 0 ? customerList.Max(x => x.Id) + 1 : 1;
+
             try
             {
                 customerList.Add(customer);
@@ -90,10 +86,10 @@ namespace CustomerAndFileApi.Controllers
         /// <param name="newCustomer">Enter new details of customer</param>
         [HttpPut("{id}")]
         [SwaggerResponse(StatusCodes.Status404NotFound, "Customer not found.", typeof(Customer))]
-        [SwaggerResponse(StatusCodes.Status204NoContent, "Customer successfully updated.")]
+        [SwaggerResponse(StatusCodes.Status200OK, "Customer successfully updated.")]
         public IActionResult UpdateCustomerDetails(int id, Customer newCustomer)
         {
-            var customer = customerList.FirstOrDefault(c => c.Id == id);
+            Customer customer = customerList.FirstOrDefault(c => c.Id == id);
 
             if (customer == null)
             {
@@ -121,7 +117,7 @@ namespace CustomerAndFileApi.Controllers
         [SwaggerResponse(StatusCodes.Status204NoContent, "Customer successfully deleted.")]
         public IActionResult DeleteCustomerDeatils(int id)
         {
-            var customer = customerList.FirstOrDefault(c => c.Id == id);
+            Customer customer = customerList.FirstOrDefault(c => c.Id == id);
 
             if (customer.Locations != null && customer.Locations.Any())
             {
