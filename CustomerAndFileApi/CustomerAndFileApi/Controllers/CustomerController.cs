@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net;
 using CustomerAndFileApi.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -19,25 +21,21 @@ namespace CustomerAndFileApi.Controllers
         };
 
         /// <summary>
-        /// Gets all customers.
+        /// Get all customer details.
         /// </summary>
-        /// <returns>A list of all customers.</returns>
         [HttpGet]
-
-
-        public ActionResult<IEnumerable<Customer>> GetAll()
+        public ActionResult<IEnumerable<Customer>> GetAllCustomers()
         {
             return customerList;
         }
 
         /// <summary>
-        /// Gets a customer by ID.
+        /// Get a customer by ID.
         /// </summary>
         /// <param name="id">Enter Id of Customer.</param>
-        /// <returns>The customer object.</returns>
         [HttpGet("{id}")]
         [SwaggerResponse(StatusCodes.Status200OK, "Returns the customer.", typeof(Customer))]
-        public ActionResult<Customer> GetById(int id)
+        public ActionResult<Customer> GetCustomerById(int id)
         {
             var customer = customerList.FirstOrDefault(c => c.Id == id);
 
@@ -52,30 +50,24 @@ namespace CustomerAndFileApi.Controllers
         /// <summary>
         /// Creates a new customer.
         /// </summary>
-        /// <param name="customer">Create customer</param>
-        /// <returns>The created customer object.</returns>
+        /// <param name="customer">Enter Customer</param>
         [HttpPost]
         public IActionResult Post(Customer customer)
         {
-            // assign new id to customer
             int newCustomerId = customerList.Max(c => c.Id) + 1;
             customer.Id = newCustomerId;
-
             customerList.Add(customer);
-            return CreatedAtAction(nameof(GetById), new { id = customer.Id }, customer);
+            return CreatedAtAction(nameof(customer.Id), new { id = customer.Id }, customer);
         }
 
         /// <summary>
-        /// Updates an existing customer.
+        /// Update the customer
         /// </summary>
-        /// <param name="id">The ID of the customer to update.</param>
-        /// <param name="updatedCustomer">The updated customer object.</param>
-        /// <returns>No content.</returns>
+        /// <param name="id">Enter ID of customer to update.</param>
+        /// <param name="newCustomer">Enter new details of customer</param>
         [HttpPut("{id}")]
         [SwaggerResponse(StatusCodes.Status204NoContent, "Customer successfully updated.")]
-        [SwaggerResponse(StatusCodes.Status400BadRequest, "Invalid customer ID or missing fields.")]
-        [SwaggerResponse(StatusCodes.Status404NotFound, "Customer not found.")]
-        public IActionResult Update(int id, Customer updatedCustomer)
+        public IActionResult Update(int id, Customer newCustomer)
         {
             var customer = customerList.FirstOrDefault(c => c.Id == id);
 
@@ -83,48 +75,37 @@ namespace CustomerAndFileApi.Controllers
             {
                 return NotFound();
             }
-
-            //update fields from updated customer
-            if (!string.IsNullOrEmpty(updatedCustomer?.Name))
+            if (!string.IsNullOrEmpty(newCustomer?.Name))
             {
-                customer.Name = updatedCustomer.Name;
+                customer.Name = newCustomer.Name;
             }
-            if (updatedCustomer?.Locations != null && updatedCustomer.Locations.Any())
+            if (newCustomer?.Locations != null && newCustomer.Locations.Any())
             {
-                customer.Locations = updatedCustomer.Locations;
+                customer.Locations = newCustomer.Locations;
             }
 
             return NoContent();
         }
 
         /// <summary>
-        /// Deletes a customer by ID.
+        /// Delete the Customer by ID
         /// </summary>
-        /// <param name="id">The ID of the customer to delete.</param>
-        /// <returns>No content.</returns>
+        /// <param name="id">Enter Customer Id to delete.</param>
         [HttpDelete("{id}")]
         [SwaggerResponse(StatusCodes.Status204NoContent, "Customer successfully deleted.")]
-        [SwaggerResponse(StatusCodes.Status404NotFound, "Customer not found.")]
-        [SwaggerResponse(StatusCodes.Status400BadRequest, "Cannot delete a customer with associated locations.")]
         public IActionResult Delete(int id)
         {
             var customer = customerList.FirstOrDefault(c => c.Id == id);
 
-            if (customer == null)
-            {
-                return NotFound();
-            }
-
             if (customer.Locations != null && customer.Locations.Any())
             {
-                return BadRequest("Cannot delete a customer with associated locations");
+                return BadRequest("Cannot delete a customer which have locations");
             }
 
             customerList.Remove(customer);
-
+            
             return NoContent();
         }
-
 
     }
 }
