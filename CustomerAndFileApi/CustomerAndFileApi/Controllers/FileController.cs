@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CustomerAndFileApi.Models;
+using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using System.IO;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,28 +11,17 @@ namespace CustomerApiProject.Controllers
     public class FileController : ControllerBase
     {
         string folderName = @"D:\";
-        
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "file1", "file2" };
-        }
 
-
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-        
         /// <summary>
         /// Post a directory name.
         /// </summary>
+        ///<param name="dirName">Enter Name of Directory to create</param>
         [HttpPost]
-        public string Post([FromForm]string dirName, IFormFile uploadFile)
+        [SwaggerResponse(StatusCodes.Status200OK, "Folder created successfully.")]
+        [SwaggerResponse(StatusCodes.Status404NotFound, "FileNotFound")]
+        public IActionResult PostFolderFile(string dirName, IFormFile uploadFile)
         {
             folderName = folderName+dirName;
-            string result = "";
             // If directory does not exist, create it
             if (!Directory.Exists(folderName))
             {
@@ -43,55 +34,52 @@ namespace CustomerApiProject.Controllers
                     using (FileStream fileStream = System.IO.File.Create(Path.Combine(folderName, uploadFile.FileName)))
                     {
                         uploadFile.CopyTo(fileStream);
-                        result = "post success";
+                        return Ok("File Added successfuly");
                     }
                 }
-                else
-                {
-                    result = "post failed";
-                }
-
+                
             }
             else 
             {
-                result = "Folder already exists";
+                return BadRequest("Folder already exists");
             }
-            return result;
-        }
 
-        // PUT api/<FileController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
+            return NoContent();
         }
 
         ///<summary>
         ///Delete Uploaded File 
         ///</summary>
+        ///<param name="fileName">Enter Full path of File to delete</param>
         [HttpDelete]
-        public string Delete(string fileName)
+        [SwaggerResponse(StatusCodes.Status200OK, "File deleted successfully")]
+        [SwaggerResponse(StatusCodes.Status404NotFound, "FileNotFound")]
+
+        public IActionResult DeleteFile(string fileName)
         {
-            string result="";
+            string filePath = fileName;
+
             try
             {
-                string filePath = folderName + fileName;
-               
                 if (System.IO.File.Exists(filePath))
                 {
                     System.IO.File.Delete(filePath);
 
                     if (!System.IO.File.Exists(filePath))
                     {
-                        result = "file deleted successfully";
+                        return Ok("File deleted successfully");
+                    }
+                    else {
+                        return NotFound();
                     }
                 }
             }
-            catch (IOException e)
+            catch (IOException exception)
             {
-                Console.WriteLine($"File could not be deleted:");
-                result = "failed to delete file";
+               return BadRequest(exception.Message);    
             }
-            return result;
+
+            return NoContent();
         }
 
 }
