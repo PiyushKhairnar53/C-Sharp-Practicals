@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualBasic.FileIO;
-using static System.Net.Mime.MediaTypeNames;
-
+﻿
 namespace FileUploadApplication
 {
     internal class FileUploadProgress
@@ -29,10 +17,12 @@ namespace FileUploadApplication
             }
            
             filePath = Console.ReadLine();
-            
-            Task<string> task =  CopyFileAsync(filePath!,destinationDir);
-            Task.WhenAll(task);
-            Console.WriteLine(task.Result);
+            if (!string.IsNullOrEmpty(filePath!.Trim())) 
+            {
+                Task<string> task =  CopyFileAsync(filePath!,destinationDir);
+                Task.WhenAll(task);
+                Console.WriteLine(task.Result);
+            }
         }
 
         async Task<string> CopyFileAsync(string _source,string destination)

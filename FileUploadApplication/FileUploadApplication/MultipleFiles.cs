@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace FileUploadApplication
 {
     internal class MultipleFiles
@@ -21,25 +15,24 @@ namespace FileUploadApplication
 
             Console.WriteLine("Please Enter multiple file path separated by comma  : ");
             string? filePath = Console.ReadLine();
-
-            string[] fileArray = filePath!.Split(",");
-            List<string> fileList = new();
-            fileList.AddRange(fileArray);
-
-            List<Task> copyTasks = new List<Task>();
-            for (int i = 0; i < fileList.Count; i++)
+            if (!string.IsNullOrEmpty(filePath!.Trim()))
             {
-                Task task = UploadFile(fileArray[i]);
-                copyTasks.Add(task);
+                string[] fileArray = filePath!.Split(",");
+                List<string> fileList = new();
+                fileList.AddRange(fileArray);
+
+                List<Task> copyTasks = new List<Task>();
+                for (int i = 0; i < fileList.Count; i++)
+                {
+                    Task task = UploadFile(fileArray[i]);
+                    copyTasks.Add(task);
+                }
+
+                await Task.WhenAll(copyTasks);
+                Console.WriteLine("All files copied successfully");
             }
-
-          
-            await Task.WhenAll(copyTasks);
-            Console.WriteLine("All files copied successfully");
-
             Console.WriteLine("\nPlease Enter file path to copy with progress : ");
         }
-
 
         public static async Task UploadFile(string filepath)
         {
