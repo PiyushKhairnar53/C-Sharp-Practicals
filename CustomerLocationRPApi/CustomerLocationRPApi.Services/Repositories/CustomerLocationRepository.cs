@@ -74,7 +74,7 @@ namespace CustomerLocationRPApi.Services.Repositories
 
         public Customer DeleteCustomerDetails(int id)
         {
-            Customer customer = customersList.FirstOrDefault(c => c.Id == id);
+            Customer? customer = customersList!.FirstOrDefault(c => c.Id == id);
             if (customer != null)
             {
                 if (customer.Locations != null && customer.Locations.Any())
