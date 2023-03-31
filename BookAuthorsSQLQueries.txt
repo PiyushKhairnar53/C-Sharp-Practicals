@@ -1,0 +1,95 @@
+CREATE TABLE Authors (id int primary key,first_name varchar(255) not null,last_name varchar(255) not null)
+
+INSERT INTO Authors VALUES(11,'Ellen','Writer')
+INSERT INTO Authors VALUES(12,'Olga','Savelieva')
+INSERT INTO Authors VALUES(13,'Jack','Smart')
+INSERT INTO Authors VALUES(14,'Donald','Brain')
+INSERT INTO Authors VALUES(15,'Yao','Dou')
+
+
+CREATE TABLE Editors (id int primary key,first_name varchar(255) not null,last_name varchar(255) not null)
+
+INSERT INTO Editors VALUES(21,'Daniel','Brown')
+INSERT INTO Editors VALUES(22,'Mark','Johnson')
+INSERT INTO Editors VALUES(23,'Maria','Evans')
+INSERT INTO Editors VALUES(24,'Cathrine','Roberts')
+INSERT INTO Editors VALUES(25,'Sebastian','Wright')
+INSERT INTO Editors VALUES(26,'Barbara','Jones')
+INSERT INTO Editors VALUES(27,'Matthew','Smith')
+
+
+CREATE TABLE Translators (id int primary key,first_name varchar(255) not null,last_name varchar(255) not null)
+
+
+INSERT INTO Translators VALUES(31,'Ira','Davies')
+INSERT INTO Translators VALUES(32,'Ling','Weng')
+INSERT INTO Translators VALUES(33,'Kristian','Green')
+INSERT INTO Translators VALUES(34,'Roman','Edwards')
+
+
+CREATE TABLE Books (id int identity(1,1) primary key,
+					title varchar(255) not null,
+					type varchar(255) not null,
+					author_id int,
+					editor_id int,
+					translator_id int,
+					CONSTRAINT FK_author_Id FOREIGN KEY (author_id)
+					REFERENCES Authors(id),
+					CONSTRAINT FK_editor_Id FOREIGN KEY (editor_id)
+					REFERENCES Editors(id),
+					CONSTRAINT FK_translator_Id FOREIGN KEY (translator_id)
+					REFERENCES Translators(id))
+
+
+
+INSERT INTO Books(title,type,author_id,editor_id,translator_id) 
+		VALUES('Time to Grow Up!','original',11,21,null);
+
+INSERT INTO Books(title,type,author_id,editor_id,translator_id) 
+		VALUES('Your trip','translated',15,22,32);
+
+INSERT INTO Books(title,type,author_id,editor_id,translator_id) 
+		VALUES('Lovely love','original',14,24,null);
+
+INSERT INTO Books(title,type,author_id,editor_id,translator_id) 
+		VALUES('Dream your life','original',11,24,null);
+
+INSERT INTO Books(title,type,author_id,editor_id,translator_id) 
+		VALUES('Oranges','translated',12,25,31);
+
+INSERT INTO Books(title,type,author_id,editor_id,translator_id) 
+		VALUES('Your Happy Life','translated',15,22,33);
+
+INSERT INTO Books(title,type,author_id,editor_id,translator_id) 
+		VALUES('Applied AI','translated',13,23,34);
+
+INSERT INTO Books(title,type,author_id,editor_id,translator_id) 
+		VALUES('My Last Book','original',11,27,null);\
+
+
+1.display information about each book’s author and translator (i.e., their last names) ->
+select b1.id,b1.title,b1.type,a1.last_name as author_last_name, t1.last_name as translator_last_name
+		from Books as b1 LEFT JOIN Authors as a1 on
+		b1.author_id = a1.id 
+		LEFT JOIN Translators as t1 on
+		b1.translator_id = t1.id
+
+2.We want to show the basic book information (i.e., ID and title) along with the last names of the corresponding editors ->
+select b1.id,b1.title,e1.last_name as editor_last_name from Books as b1 INNER JOIN Editors as e1 
+		on b1.editor_id = e1.id
+
+3.List all the Editors with their book titles by their last names ->
+select e1.id,e1.first_name as editor_first_name,e1.last_name as editor_last_name,b1.title from
+		Editors as e1 LEFT JOIN Books as b1 on e1.id = b1.editor_id order by e1.last_name
+
+4.List of books their Authors, Editors, Translators by book type ->
+select b1.id,b1.title,a1.first_name +' '+a1.last_name as author_name,
+	   e1.first_name +' '+e1.last_name as editor_name,
+	   t1.first_name +' '+t1.last_name as translator_name
+	   from Books as b1 LEFT JOIN Authors as a1 on
+	   b1.author_id = a1.id
+	   LEFT JOIN Editors as e1 on
+	   b1.editor_id = e1.id
+	   LEFT JOIN Translators as t1 on
+	   b1.translator_id = t1.id
+	   order by b1.type
