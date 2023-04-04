@@ -1,0 +1,396 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    color: black;
+    font-family: "Fira Sans", sans-serif;
+    background-color: white;
+}
+
+:root{
+    --background-color1: #fafaff;
+    --background-color2: #ffffff;
+    --background-color3: #ededed;
+    --background-color4: #cad7fda4;
+    --primary-color: hsl(220, 74%, 50%);
+    --secondary-color: #1900ff;
+    --Border-color: #3f0097;
+    --one-use-color: #3f0097;
+    --two-use-color: #5500cb;
+}
+
+nav{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background-color: var(--primary-color);
+}
+
+nav .heading{
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: 0.2s ease-in;
+}
+
+nav ul li a{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+nav ul li:hover{
+    background-color: black;
+}
+
+nav ul li a:hover{
+    color: white;
+}
+
+@media screen and(max-width:600px) {
+    nav .navbar{
+        display: none;
+    }
+}
+
+.sideNavigationBar{
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0%;
+    background-color: blue;
+    overflow-x: hidden;
+    transition: 0.3s ease-in;
+    padding-top: 60px;
+    display: none;
+}
+
+.sideNavigationBar a{
+    padding: 8px 8px 8px 40px;
+    display: block;
+    font-size: 25px;
+    font-weight: 500;
+    color: #d1d1d1;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.line{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 4% 10%;
+}
+
+.line .side1{
+    padding-right: 50px;
+}
+
+.line .side1 p{
+    align-items: center;
+    color: black;
+    font-size: 18px;
+}
+
+.side1 h1{
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+button{
+    width: 162px;
+    height: 35px;
+    border-radius: 12px;
+    margin-top: 15px;
+    border-color: transparent;
+    background-color: rgb(111, 111, 243);
+    color: white;
+}
+
+button:hover{
+    background-color: black;
+}
+
+button a:hover{
+    color: white;
+}
+
+@media screen and (max-width:980px) {
+    .side2 img{
+        width: 350px;
+    }
+    .side1 h1{
+        font-size: 40px;
+    }
+    .side1 p{
+        font-size: 17px;
+        color: var(--primary-color);
+    }
+    .line{
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    
+    .side1 h1{
+        font-size: 35px;
+    }
+    .line .side1{
+        font-size: 17px;
+    }
+    .line{
+        flex-direction: column;
+    }
+}
+
+section .topic a{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.about .boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.about .boxes.box{
+    margin: 10px 20px;
+    max-width: calc(100%/2 - 50px);
+    text-align: center;
+    border-radius: 12px;
+    padding: 30px 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.12);
+    cursor: default;
+}
+
+.content .title{
+    text-align: center;
+    font-weight: bolder;
+    align-content: center;
+    font-size: 40px;
+}
+
+.title{
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+@media screen and (max-width:600px) {
+    
+    .side2 img{
+        width: 100%;
+    }
+
+    section .topic a{
+        font-size: 20px;
+    }
+    .about .boxes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about .boxes .box{
+        max-width: 70%;
+    }
+}
+
+.line2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4% 10%;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 30%;
+}
+
+.card :hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card img{
+    padding: 30px;
+    width: 100%;
+    height: 200px;
+}
+
+.container{
+    padding: 2px 16px;
+}
+
+.card .container h4{
+    align-items: center;
+    font-size: 25px;
+    margin-bottom: 3px;
+}
+
+
+/* ----- Footer --------- */
+
+footer{
+    position: absolute;
+    background: #111;
+    height: auto;
+    width: 100%;
+    color: #fff;
+}
+
+.footer-content p{
+    max-width: 500px;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+
+.footer-content h3{
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+/* -------Form-------- */
+
+.form-style-5{
+    max-width: 70%;
+    padding: 10px 20px;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.form-style-5 fieldset{
+    border: none;
+}
+
+.form-style-5 legend{
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-style-5 label{
+    display: block;
+    margin-bottom: 8px;
+}
+
+
+.form-style-5 input[type = "text"],
+.form-style-5 input[type = "date"],
+.form-style-5 input[type = "datetime"],
+.form-style-5 input[type = "email"],
+.form-style-5 input[type = "numbert"],
+.form-style-5 input[type = "search"],
+.form-style-5 input[type = "time"],
+.form-style-5 input[type = "url"],
+.form-style-5 textarea,
+.form-style-5 select{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: rgba(255, 255, 255, .1);
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    margin: 0;
+    outline: 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color: #000000;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+    margin-bottom: 30px;
+}
+
+.form-style-5 input[type = "text"]:focus,
+.form-style-5 input[type = "date"]:focus,
+.form-style-5 input[type = "datetime"]:focus,
+.form-style-5 input[type = "email"]:focus,
+.form-style-5 input[type = "number"]:focus,
+.form-style-5 input[type = "search"]:focus,
+.form-style-5 input[type = "time"]:focus,
+.form-style-5 input[type = "url"]:focus,
+.form-style-5 textarea:focus,
+.form-style-5 select:focus{
+    background: #d2d9dd;
+}
+.form-style-5 select{
+    -webkit-appearance: menulist-button;
+    height: 35px;
+}
+
+.form-style-5 .number{
+    background: rgb(111, 111, 243);;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.form-style-5 input[type="submit"],
+.form-style-5 input[type="button"]{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #fff;
+    margin: 0 auto;
+    background: rgb(111, 111, 243);;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid rgb(111, 111, 243);;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+.form-style-5 input[type="submit"],
+.form-style-5 input[type="button"]{
+    background-color: rgb(111, 111, 243);;
+}
+
+
