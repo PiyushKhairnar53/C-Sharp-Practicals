@@ -127,6 +127,7 @@ button{
     height: 35px;
     border-radius: 12px;
     margin-top: 15px;
+    font-size: 15px;
     border-color: transparent;
     background-color: rgb(111, 111, 243);
     color: white;
@@ -134,6 +135,7 @@ button{
 
 button:hover{
     background-color: black;
+    text-decoration: none;
 }
 
 button a:hover{

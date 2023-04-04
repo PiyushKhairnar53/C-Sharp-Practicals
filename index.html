@@ -5,7 +5,7 @@
     <meta name="viewport" content=
         "width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-     <title>Landing Page</title>
+     <title>HTML Assignment</title>
 </head>
 
 <body>
@@ -15,10 +15,10 @@
         <div class="heading">IncubXperts</div>
         <div class="navbar">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#careers">Careers</a></li>
-                <li><a href="#contact">Contact us</a></li>
-                <li><a href="#signup">Sign up</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Register.html">Register</a></li>
+                <li><a href="home_page.html">Favorite color</a></li>
+                <li><a href="time_table_page.html">Time Table</a></li>
             </ul>
         </div>
     </nav>
@@ -29,8 +29,8 @@
         <div class="side1">
             <h1>IncubXperts</h1>
             <p>Welcome to <strong>IncubXperts</strong> we are <br>experts of all kinds of technologies</p>
-            <button>
-                <a href="#signup">Signup</a>
+            <button onclick="location.href='Register.html'" type="button">
+                Register
             </button>
         </div>
         
@@ -83,12 +83,13 @@
         </div>
         <div class="line">
             <video width="420" height="250" controls>  
-                <source src="tomandjerry.ogg" type="video/ogg">  
+                <h2>Bird</h2>
+                <source src="bird.mp4" type="video/ogg">  
             Your browser does not support the html video tag.  
             </video>  
 
             <audio controls>
-                <source src="kesariya.mp3" type="audio/mpeg">
+                <source src="jazz.mp3" title="Jazz" type="audio/mpeg">
                 Your browser does not support the audio tag.
             </audio>
 
@@ -141,11 +142,11 @@
 
             <div>
                 <dl>
-                    <dt>Mobile -</dt>
-                        <dd><h2>Native</h2></dd>
-                        <dd><h3>Flutter</h3></dd>
-                        <dd><h4>React</h4></dd>
-                        <dd><h5>Xamarin</h5></dd>
+                    <dt>Mobile - </dt>
+                        <dd><h3>Native</h2></dd>
+                        <dd><h4>Flutter</h3></dd>
+                        <dd><h5>React</h4></dd>
+                        <dd><h6>Xamarin</h5></dd>
                 </dl>
             </div>
         </div>
@@ -198,50 +199,7 @@
         </div>
     </section>
 
-    <section>
-        <div class="content">
-            <div class="title">
-                <span>Form</span>
-            </div>
-        </div>
-       
-        <div>
-            <div class="form-style-5" >
-                <form>
-                    <fieldset>
-                        <legend>
-                           Registration Form 
-                        </legend>
-                        <label for="nameField" >Progress of form filling </label>
-                        <progress id="file" value="10" max="100"> 32% </progress>
-                        <label for="nameField" >Enter name </label>
-                        <input type="text" name="nameField" placeholder="Piyush Khairnar">
-                        <label for="emailField">Enter Email </label>
-                        <input type="text" name="emailField" placeholder="piyush@gmail.com">
-        
-                        <label for="designation" >Designation : </label>
-                        <select id="designation" name="designationField">
-                            <optgroup label="Designation">
-                                <option>Student</option>
-                                <option>Manager</option>
-                                <option>Businessman</option>
-                                <option>Teacher</option>
-                                <option>Software Engineer</option>
-                                <option>Farmer</option>
-                            </optgroup>
-                        </select>
-                        <label for="passwordField">Enter Password</label>
-                        <input type="text" name="passwordField" placeholder="******">
-                        <textarea id="txtArea" name="description" placeholder="Please enter description of your projects" rows="4" cols="50"></textarea>
-
-                    </fieldset>
-                    <input type="submit" value="Apply">
-                </form>
-            </div>
-        </div>
-    </section>
-      
-
+    
     <footer>
         <div class="container">
             <div class="line2">
@@ -257,10 +215,10 @@
                 <div class="col-sm-6 col-md-3 item">
                     <h4>About</h4>
                     <ul>
-                        <li><a href="#">Web design</a></li>
-                        <li><data values="21302">Web development</data></li>
-                        <li><a href="#"><i>Mobile development</i></a></li>
-                        <li><a href="#">Database,<del>Hosting</del> services</a></li>
+                        <li><a href="#">Company</a></li>
+                        <li><data values="21302">Founders</data></li>
+                        <li><a href="#"><i>Team</i></a></li>
+                        <li><a href="#">Location,<del>Karve Nagar</del> Nanded city</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 item text">
