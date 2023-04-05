@@ -1,0 +1,86 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <title>Lexicon</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark d-flex justify-content-between">
+        <div>
+        <label style="color:purple; margin: 10px;">LEXICON</label>
+        </div>
+        <div>
+            <div class="row" >
+                <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: rgb(227, 242, 255); width: 100px;" id="filter">
+                        All</button>
+                </div>    
+                <input class="form-control" style=" background-color: rgb(227, 242, 255);height: 38px; width: 700px;" placeholder="Search . . ." name="srch-term"  id="ed-srch-term" type="text">
+                <button type="submit" id="searchbtn" style="background-color: rgb(227, 242, 255);width: 70px;">search</button>
+            </div>
+        </div>
+        <div >
+            <button type="button" class="btn btn-outline-primary text-center" style="margin-right: 10px; height: 35px; background-color: white;">
+                <i class="fa fa-sign-out"></i> Log out</button>
+            <i class="fa fa-bell" style="margin-left: 20px;"></i> 
+            <img src="dotnet.png" style="width: 30px;height: 30px; margin-left: 20px;" alt="Profile Image">
+            <label>Name</label>
+        </div>
+    </nav>
+
+    <div class="wrapper d-flex">
+		<div class="sidebar" style="margin-top: -20px;">
+			<ul style="list-style-type: none;">
+				<li><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
+				<li><a href="#"><i class="fa fa-users"></i> Team</a></li>
+				<li class="notification1"><a href="#"><i class="fa fa-calendar"></i> Calender</a><span class="number1"></span></li>
+				<li class="notification2"><a href="#"><i class="fa fa-envelope"></i> Documents</a><span class="number2"></span></li></li>
+				<li><a href="#"><i class="fa fa-signal"></i> Reports</a></li>
+			</ul>
+	</div>
+    </div>
+
+    <div class="wrapper d-flex">
+        <div class="rightSideWrapper" style="margin-top: -20px;">
+            <p>Lexicon / Smith / Jones / Attorney </p>
+            <h3>Smith VS Jones</h3>
+            <div class="row">
+                <p><i class="fa fa-check" style="padding-left: 15px;"></i> Home</p> 
+                <p><i class="fa fa-check" style="padding-left: 10px;"></i> Home</p> 
+                <p><i class="fa fa-check" style="padding-left: 10px;"></i> Home</p> 
+            </div>
+
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Documents</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Reports</a>
+                  </li>  
+              </ul>
+    </div>
+
+
+    
+</body>
