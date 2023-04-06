@@ -1,16 +1,13 @@
-nav{
-    height: 60px;
-    display: flex;
-    margin: 0;
-    justify-content: space-between;
-    background-color: rgb(249, 246, 255);
+
+.nav-tabs{
+    background-color: transparent;
 }
 
-nav .heading{
-    font-size: 30px;
-    font-weight: 700;
-    color: white;
+.nav-item{
+    margin-right: 4px;
+    background-color: rgb(246, 248, 255);
 }
+
 
 #searchbtn
 { border:0;
