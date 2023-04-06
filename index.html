@@ -12,17 +12,19 @@
 
 <body>
 
-    <nav class="navbar navbar-dark nav-justified d-flex">
-        <button class="navbar-toggler mr-auto"
+    <nav class="navbar navbar-dark nav-justified d-flex" style="margin-top: -8px; margin-bottom: -1px;">
+        <button class="navbar-toggler"
                 type="button"
                 data-target="#nav1">
-            <span class="navbar-toggler-icon my-toggler">
+            <span class="navbar-toggler-icon my-toggler" style="color: white;">
           </span>
         </button>
-        <div class="p-2">
+        <div class="row mt-0">
+            <img src="flutter.png" style="width: 70px; height: 50px;" alt="flutter">
+            <img src="dotnet.png" style="width: 30px;height: 30px;margin-left: 30px; margin-top: 10px; margin-right: -50px;" alt="Profile Image">
             <ul>
                 <li>
-                    <label class="dropdown-toggle">SupplierTest11</label>
+                    <label class="dropdown-toggle" style="color: white; margin-top: 2px;">SupplierTest11</label>
                 </li>
             </ul>
         </div>
@@ -31,15 +33,14 @@
     <header class="row justify-content-between mr-auto ml-auto">
         <label>Home</label>
         <div>
-            <img src="react.jpg" style="width: 50; height: 30px;" alt="react">
-            <img src="flutter.png" style="width: 50; height: 30px;" alt="react">
+            <img src="react.jpg" style="width: 50; height: 30px; margin-top: 4px;" alt="react">
+            <img src="flutter.png" style="width: 50; height: 30px; margin-top: 4px;" alt="react">
         </div>
     </header>
 
-
-    <div class="container">
-        <div class="row justify-content-between mx-auto">
-        <div >
+    
+<div class="row d-flex justify-content-end mx-auto" style="width: 100%;">
+    <div class="col d-flex mt-2">
         <ul class="nav nav-pills nav-fill" >
             <li class="nav-item">
               <a class="nav-link bg-dark " href="#">Draft</a>
@@ -54,27 +55,32 @@
               <a class="nav-link bg-dark" href="#">All</a>
             </li>
           </ul>
-        </div>
-
-        <div>
-            <nav aria-label="Page navigation example" class="bg-transparent">
-                <ul class="pagination ">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
+   </div>
+    
+    <div class="col d-flex">
+        <nav class="page-count-nav" style="background-color: white;">
+            <ul class="pagination justify-content-end">
+                <li class="page-item disabled" style="margin-right:-40px;">
+                    <a class="page-link" href="#" tabindex="-1">Prev</a>
+                </li>
+                <li class="page-item active" style="margin-right:-40px;"><a class="page-link" href="#">1</a></li>
+                <li class="page-item" style="margin-right:-40px;"><a class="page-link" href="#">2</a></li>
+                <li class="page-item" style="margin-right:-40px;"><a class="page-link" href="#">3</a></li>
+                <li class="page-item" style="margin-right:-40px;"><a class="page-link" href="#">..</a></li>
+                <li class="page-item">
                     <a class="page-link" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
-        </div>
+                </li>
+                <li class="page-item">
+                <button type="button" style="background-color: hsl(220, 84%, 58%); margin-left: -40px; height: 37px;" class="btn btn-primary dropdown-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                   50
+                </button>
+                </li>
+            </ul>
+        </nav>
     </div>
     </div>
 
-    <div class="row row-cols-4 g-2 mt-2">
+    <div class="row row-cols-4 ml-1 mt-2 mr-0">
     <div class="col">
         <div class="card">
           <div class="card-body">
