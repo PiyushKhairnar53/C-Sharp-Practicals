@@ -1,0 +1,103 @@
+
+.nav-tabs{
+    background-color: transparent;
+}
+
+.nav-item{
+    margin-right: 4px;
+    background-color: rgb(235, 235, 255);
+}
+
+
+#searchbtn
+{ border:0;
+  color: black;
+  border-left: none;
+  height: 38px;
+  margin-top: 1px;
+  background-color: white;
+  border-radius: 0 40px 40px 0 !important;
+  border-color: grey;
+}
+
+#filter
+{ border:0;
+  color: black;
+  border-right: none;
+  height: 38px;
+  margin-top: 1px;
+  background-color: white;
+  border-radius: 40px 0 0 40px !important;
+  border-color: grey;
+}
+
+.sidebar{
+	position: fixed;
+	width: 200px;
+	height: 100%;
+	background: #4527A0;
+	padding: 5px 0;
+	    
+}
+.wrapper .sidebar ul li{
+    margin-left: 0;
+	padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+.wrapper .sidebar ul li a{
+	color: white;
+	display: block;
+}
+
+.rightSideWrapper {
+	width: 100%; 
+	float: right;
+    align-content: center;
+    align-items: center;
+	height: 100%;
+    padding-left: 220px;
+    padding-top: 5px;
+}
+
+#exTab2 h3 {
+    color : white;
+    background-color: #428bca;
+    padding : 5px 15px;
+  }
+
+  .nav {
+    float:left;
+    width:100%;
+ }
+ 
+ .navLeft {
+    width:21%;
+    float:left;
+    padding:11px 0;
+    background-color:Chartreuse;
+ }
+ 
+ .navCenterWrap {
+    margin:auto;
+    width:6%;
+ }
+ 
+ .navCenter {
+    float:left;
+    width:100%;
+    padding:11px 0;
+    background-color:yellow;
+ }
+ 
+ .navRight {
+    width:31%;
+    float:right;
+    padding:11px 0;
+    background-color:blue;
+ }
+
+ .navWrap {
+    margin:auto;
+    width:961px;
+ }

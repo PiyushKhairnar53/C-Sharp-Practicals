@@ -1,0 +1,224 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <title>Lexicon</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark d-flex justify-content-between pb-3 border-bottom">
+        <div class="pr-5">
+        <label style="color:purple; font-size: 20px; padding-right: 100px; margin-top: 10px;">LEXICON</label>
+        </div>
+        <div>
+            <div class="row" >
+                <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle border" type="button" data-toggle="dropdown" style="background-color: rgb(227, 242, 255); width: 100px;" id="filter">
+                        All</button>
+                </div>    
+                <input class="form-control border border-left-0 border-right-0" style="border-radius: 0%; background-color: rgb(227, 242, 255);margin-top: 1px; height: 38px; width: 700px;" placeholder="Search . . ." name="srch-term"  id="ed-srch-term" type="text">
+                <button class="border" type="submit" id="searchbtn" style="background-color: rgb(227, 242, 255);width: 100px;">search</button>
+            </div>
+        </div>
+        <div >
+            <button type="button" class="btn btn-outline-primary text-center border border-primary" style="margin-right: 10px; height: 35px; background-color: white;">
+                <i class="fa fa-sign-out"></i> Log out</button>
+            <i class="fa fa-bell" style="margin-left: 20px;"></i> 
+            <img src="dotnet.png" style="width: 30px;height: 30px; margin-left: 20px;" alt="Profile Image">
+            <label class="dropdown-toggle">Name</label>
+        </div>
+    </nav>
+
+    <div class="wrapper d-flex">
+		<div class="sidebar" style="margin-top: -20px;">
+			<ul style="list-style-type: none;">
+				<li><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
+                <hr style="margin-right: 20%;">
+				<li><a href="#"><i class="fa fa-users"></i> Team</a></li>
+				<li class="notification1"><a href="#"><i class="fa fa-calendar"></i> Calender</a><span class="number1"></span></li>
+				<li class="notification2"><a href="#"><i class="fa fa-envelope"></i> Documents</a><span class="number2"></span></li></li>
+				<li><a href="#"><i class="fa fa-signal active"></i> Reports</a></li>
+			</ul>
+            <div class="justify-content-center p-5" style=" margin-top: 100%;">
+                <p style="width: 100%;margin-left: 18px; color: white;"><strong>Powered by</strong></p>
+                <h4 style="width: 100%;margin-left: 20px;font-size: 20px; color: white; margin-top: -10px;"><strong>Lexicon</strong></h4>
+                <p style="width: 100%;margin-left: 30px; color: white;">V 1.2.3</p>
+            </div>
+	</div>
+    </div>
+
+    <div class="wrapper d-flex">
+        <div class="rightSideWrapper" style="margin-top: -20px; background-color:rgb(238, 247, 255) ;">
+            <p style="margin-top: 5px;">Lexicon / Smith / Jones / Attorney </p>
+            <h3>Smith VS Jones</h3>
+            <div class="d-flex justify-content-between mr-3">
+                <div class="row">
+                <p><i class="fa fa-check" style="padding-left: 15px;"></i> Home</p> 
+                <p><i class="fa fa-check" style="padding-left: 10px;"></i> Home</p> 
+                <p><i class="fa fa-check" style="padding-left: 10px;"></i> Home</p> 
+                </div>
+                <button type="button" style="background-color: #4527A0;" class="btn btn-primary dropdown-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                   Matter Author
+                  </button>
+            </div>
+
+            <div>
+
+            <ul class="nav nav-tabs mr-3 pr-2 pt-0 pb-0 border-0" style="background-color:rgb(238, 247, 255) ;" >
+                <li class="nav-item ml-0 pl-2 pr-2 border-dark border-top" style="background-color: white;">
+                  <a class="nav-link" href="#hometab" style="background-color: white; color: #4527A0;">Home</a>
+                </li>
+                <li class="nav-item pt-1 pr-1 pl-1 border-top" >
+                  <a class="nav-link border-left-0 border-right-0" style="color: black;" href="#">Link</a>
+                </li>
+                <li class="nav-item pt-1 pr-1 pl-1 border-top">
+                  <a class="nav-link" href="#" style="color: black;">Link</a>
+                </li>
+                <li class="nav-item pt-1 pr-1 pl-1 border-top" >
+                  <a class="nav-link" href="#" style="color: black;">Profile</a>
+                </li>
+                <li class="nav-item pt-1 pr-1 pl-1 border-top" >
+                    <a class="nav-link" href="#" style="color: black;">Documents</a>
+                  </li>
+                  <li class="nav-item pt-1 pr-1 pl-1 border-top">
+                    <a class="nav-link" href="#" style="color: black;">Reports</a>
+                </li>  
+            </ul>
+
+            <div class="panel-body mr-4 mb-4" style="background-color: white;" >
+                <div class="tab-content" >
+                    <div class="container ml-0" id="hometab">
+                        <div class="row justify-content-start ml-0">
+                    <div class="col ml-0">    
+
+                    <h3 style="font-size: 17px; margin-top: 25px; margin-left: -17px;"><strong>Matter Information</strong> </h3>
+                    <div class="row">
+                        <div class="row">
+                            <div class="col justify-content-start">
+                                <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                                <p style="font-size: 13px;">Piyush</p>
+                                <h5 style="margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                                <p style="font-size: 13px;">Piyush</p>
+                                <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                                <p style="font-size: 13px;">Piyush</p>
+                                <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                                <p style="font-size: 13px;">Piyush</p>
+                                <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                                <p style="font-size: 13px;">Piyush</p>
+                            </div>
+                            <div class="col">
+                                <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Assignments</h5>
+                                <p style="font-size: 13px;">0</p>
+                                <h5 style="margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                                <p style="font-size: 13px;">Piyush</p>
+                                <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                                <p style="font-size: 13px;">Piyush</p>
+                                <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                                <p style="font-size: 13px;">Piyush</p>
+                                <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                                <p style="font-size: 13px;">Piyush</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    </div>
+
+                    <div class="col">    
+                        <label style="margin-left: 13px; font-size: 17px; margin-top: 25px;">Client Information</label>
+                        <div class="row">
+                            <div class="row">
+                                <div class="col ml-5">
+                                    <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 5px;">This is client informartion here<br>You can see all client info</h5>
+                                    <p style="font-size: 13px;">Piyush</p>
+                                    <h5 style="margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                                    <p style="font-size: 13px;">Piyush</p>
+                                    <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 5px;">Name</h5>
+                                    <p style="font-size: 13px;">Piyush</p>
+                                    <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                                    <p style="font-size: 13px;">Piyush</p>
+                                    <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                                    <p style="font-size: 13px;">Piyush</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="col justify-content-start">  
+                        <div class="d-flex justify-content-between">  
+                        <label style="font-size: 17px; margin-top: 25px; margin-left: -16px;">Matter Alerts</label>
+                        <p style="color: #3a64e1; margin-top: 27px">View all</p>
+                        </div>
+                        <div class="row">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="alert alert-danger border border-left-5 border-right-0 border-bottom-0 border-top-0 border-danger" style="border-width: 4cm;" role="alert">
+                                        <i style="margin-right: 4px;" class="fa fa-info-circle"></i>This is a danger alert with. Give it a click if you like.
+                                      </div>
+                                    <div class="alert alert-warning border border-warning border-left-5 border-right-0 border-bottom-0 border-top-0 " style="border-width: 4cm;" role="alert">
+                                        <i style="margin-right: 4px;" class="fa fa-warning"></i>This is a danger alert with. Give it a click if you like.
+                                    </div> 
+                                    <div class="row justify-content-end" style="margin-top: 30%;">
+                                    <button type="button" style="background-color: #4527A0;" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                        Create Matter Alert
+                                       </button>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div class="container ml-0">
+                        <label style="font-size: 17px; margin-top: 10px; margin-left: -17px;">Attorney Information</label>
+                    <div class="row">
+                    <div class="row">
+                        <div class="col">
+                            <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                            <p style="font-size: 13px;">Piyush</p>
+                            <h5 style="margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                            <p style="font-size: 13px;">Piyush</p>
+                            <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                            <p style="font-size: 13px;">Piyush</p>
+                            <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                            <p style="font-size: 13px;">Piyush</p>
+                            <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                            <p style="font-size: 13px;">Piyush</p>
+                        </div>
+                        <div class="col">
+                            <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                            <p style="font-size: 13px;">Piyush</p>
+                            <h5 style="margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                            <p style="font-size: 13px;">Piyush</p>
+                            <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                            <p style="font-size: 13px;">Piyush</p>
+                            <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                            <p style="font-size: 13px;">Piyush</p>
+                            <h5 style="font-size: 13px; margin-top: 10px; margin-bottom: 3px;">Name</h5>
+                            <p style="font-size: 13px;">Piyush</p>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button type="button" style="background-color: #4527A0; height: 35px; margin-top: -9%;" class="btn btn-primary dropdown-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                            <i class="fa fa-lock pr-2"></i>Teams
+                        </button>
+                    </div>   
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
