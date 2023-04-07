@@ -1,4 +1,3 @@
-
 .nav-tabs{
     background-color: transparent;
 }
@@ -8,27 +7,78 @@
     background-color: rgb(235, 235, 255);
 }
 
-
-#searchbtn
-{ border:0;
-  color: black;
-  border-left: none;
-  height: 38px;
-  margin-top: 1px;
-  background-color: white;
-  border-radius: 0 40px 40px 0 !important;
-  border-color: grey;
+.lexiconLabel{
+    color:purple; font-size: 20px; 
+    margin-top: 10px;
 }
 
-#filter
-{ border:0;
-  color: black;
-  border-right: none;
-  height: 38px;
-  margin-top: 1px;
-  background-color: white;
-  border-radius: 40px 0 0 40px !important;
-  border-color: grey;
+
+.inputSearch{
+    border-radius: 0%; 
+    background-color: rgb(227, 242, 255);
+    margin-top: 1px; 
+    height: 40px; 
+    width: 70%;
+}
+
+.profile-image{
+    width: 30px;
+    height: 30px;
+}
+
+.ul-list{
+    list-style-type: none;
+}
+
+.poweredby-p{
+    width: 100%;
+    margin-left: 18px; 
+    color: white;
+}
+
+.version-p{
+    width: 100%;
+    margin-left: 30px; 
+    color: white;
+}
+
+.lexicon-h4{
+    width: 100%;
+    margin-left: 20px;
+    font-size: 20px; 
+    color: white; 
+    margin-top: -10px;
+}
+
+.searchbtn{ 
+    background-color: rgb(227, 242, 255);
+    width: 100px;
+    border:0;
+    color: black;
+    border-left: none;
+    height: 38px;
+    margin-top: 1px;
+    background-color: white;
+    border-radius: 0 40px 40px 0 !important;
+    border-color: grey;
+}
+
+.btn-logout{
+    margin-right: 10px; 
+    height: 35px; 
+    background-color: white;
+}
+
+.filter{ 
+    width: 100px;
+    border:0;
+    color: black;
+    border-right: none;
+    height: 38px;
+    margin-top: 1px;
+    border-radius: 40px 0 0 40px ;
+    background-color: rgb(227, 242, 255) !important; 
+    border-color: grey;
 }
 
 .sidebar{
@@ -36,9 +86,9 @@
 	width: 200px;
 	height: 100%;
 	background: #4527A0;
-	padding: 5px 0;
 	    
 }
+
 .wrapper .sidebar ul li{
     margin-left: 0;
 	padding-top: 15px;
@@ -58,46 +108,93 @@
 	height: 100%;
     padding-left: 220px;
     padding-top: 5px;
+    background-color:rgb(238, 247, 255) ;
 }
 
-#exTab2 h3 {
-    color : white;
-    background-color: #428bca;
-    padding : 5px 15px;
-  }
+.dropdown-btn{
+    background-color: #4527A0;
+}
 
-  .nav {
+.h3-text{
+    font-size: 17px; 
+    margin-top: 25px; 
+    margin-left: -17px;
+}
+
+.nav-color{
+    background-color:rgb(238, 247, 255);
+}
+
+.tab-color{
+    background-color: white;
+    color: #4527A0;
+}
+
+.border-width{
+    border-width: 4cm;
+}
+
+.p-viewall{
+    color: #3a64e1; 
+    margin-top: 27px
+}
+
+.white-color{
+    background-color: white;
+}
+
+.label-text{
+    font-size: 17px; 
+    margin-top: 25px; 
+    margin-left: -16px;
+}
+
+.p-info{
+    font-size: 13px;
+}
+
+.h5-text{
+    font-size: 13px; 
+    margin-top: 10px; 
+    margin-bottom: 3px;
+}
+
+.tab-text-color{
+    color: black;
+}
+
+.nav {
     float:left;
     width:100%;
- }
+}
  
- .navLeft {
+.navLeft {
     width:21%;
     float:left;
     padding:11px 0;
     background-color:Chartreuse;
- }
+}
  
- .navCenterWrap {
+.navCenterWrap {
     margin:auto;
     width:6%;
- }
+}
  
- .navCenter {
+.navCenter {
     float:left;
     width:100%;
     padding:11px 0;
     background-color:yellow;
- }
+}
  
- .navRight {
+.navRight {
     width:31%;
     float:right;
     padding:11px 0;
     background-color:blue;
- }
+}
 
- .navWrap {
+.navWrap {
     margin:auto;
     width:961px;
- }
+}
