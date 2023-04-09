@@ -214,11 +214,11 @@ $(function () {
         placeholder:"select date range"
     })
 
-    $('input[name="datepicker"]').datepicker({
-        opens: 'left',
-        minDate:new Date(currentYear,currentMonth,10),
-        maxDate:new Date(currentYear,currentMonth,30),
-        value:new Date(new Date().setDate(currentDay))
-    })
+    // $('input[name="datepicker"]').datepicker({
+    //     opens: 'left',
+    //     minDate:new Date(currentYear,currentMonth,10),
+    //     maxDate:new Date(currentYear,currentMonth,30),
+    //     value:new Date(new Date().setDate(currentDay))
+    // })
 
 });
