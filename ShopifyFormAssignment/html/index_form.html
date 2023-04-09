@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -28,7 +29,7 @@
                         <h4 class="title-create">Create Booking</h4>
                     </div>
 
-                    <div class="d-flex justify-content-between card-size p-5">
+                    <div class="d-flex justify-content-between card-size p-3">
                         <label class="p-2 mt-1">Booking Name</label>
                         <div class="shadow rounded form-card border-dark div-size w-75">
                             <div class="form-group">
@@ -41,7 +42,7 @@
 
                     <hr class="d-flex justify-content-between card-border">
 
-                    <div class="d-flex justify-content-between card-size p-5">
+                    <div class="d-flex justify-content-between card-size p-3">
                         <label class="p-2 mt-1">Involved Parties</label>
                         <div class="shadow rounded form-card border-dark div-size w-75">
                             <div class="form-group">
@@ -89,7 +90,7 @@
 
                     <hr class="d-flex justify-content-center card-border">
 
-                    <div class="d-flex justify-content-between card-size p-5">
+                    <div class="d-flex justify-content-between card-size p-3">
                         <label class="p-2 mt-1">Cargo Details</label>
                         <div class="shadow rounded form-card border-dark w-75" style="margin-left: 10%; width: 50%;">
                             <div class="form-group">
@@ -151,16 +152,20 @@
                                                         <div class="col">
                                                             <label class="bg-white" for="text_kg">Number of
                                                                 containers</label>
-                                                            <input type="number" placeholder="kg"
-                                                                class="form-control text-right"
-                                                                id="text_no_of_container">
+                                                            <input type="number"
+                                                                class="form-control text-right" id="text_no_of_container">
                                                         </div>
                                                         <div class="col">
                                                             <label class="bg-white" for="text_cbm">Container
                                                                 Type</label>
-                                                            <input type="number" placeholder="cbm"
-                                                                class="form-control text-right"
-                                                                id="text_container_type">
+                                                                <select class="user-select-all bg-white mb-3"
+                                                                id="select_container_type">
+                                                                <option selected>Select Container type</option>
+                                                                <option value="1">10ft</option>
+                                                                <option value="2">20ft</option>
+                                                                <option value="3">30ft</option>
+                                                                <option value="4">40ft</option>
+                                                            </select>
                                                         </div>
                                                     </div>
 
@@ -210,9 +215,9 @@
 
                     <hr class="d-flex justify-content-center card-border">
 
-                    <div class="d-flex justify-content-between card-size p-5">
+                    <div class="d-flex justify-content-between card-size p-3">
                         <label class="p-2 mt-1">Origin Address</label>
-                        <div class="shadow rounded form-card border-dark div-size">
+                        <div class="shadow rounded form-card border-dark div-size w-75">
                             <div class="form-group">
                                 <label class="bg-white" for="text_origin_address">Origin Address</label>
 
@@ -232,9 +237,9 @@
 
                     <hr class="d-flex justify-content-center card-border">
 
-                    <div class="d-flex justify-content-between card-size p-5">
+                    <div class="d-flex justify-content-between card-size p-3">
                         <label class="p-2 mt-1">Origin Port</label>
-                        <div class="shadow rounded form-card border-dark div-size">
+                        <div class="shadow rounded form-card border-dark div-size w-75">
                             <div class="form-group">
                                 <label class="bg-white" for="select_zipcode">Zipcode</label>
                                 <select class="user-select-all bg-white mb-3" id="select_zipcode">
@@ -249,19 +254,19 @@
 
                     <hr class="d-flex justify-content-center card-border">
 
-                    <div class="d-flex justify-content-between card-size p-5">
+                    <div class="d-flex justify-content-between card-size p-3">
                         <label class="p-2 mt-1">Origin trucking services</label>
-                        <div class="shadow rounded form-card border-dark div-size">
+                        <div class="shadow rounded form-card border-dark div-size w-75">
                             <div class="form-group">
                                 <label class="bg-white" for="radio_need_port"><strong>Will you need Flexport Origin
                                         Trucking Services (origin to port)?</strong></label>
                                 <div class="btn-group incoterms-btn-group">
-                                    <input type="radio" class="btn-check" name="flexport-radio" id="radio-yes"
+                                    <input type="radio" class="btn-check" name="radio_flex_port" id="radio_yes"
                                         value="Yes">
-                                    <label class="btn btn-outline-secondary" for="radio-yes">Yes</label>
-                                    <input type="radio" class="btn-check" name="flexport-radio" id="radio-no"
+                                    <label class="btn btn-outline-secondary" for="radio_yes">Yes</label>
+                                    <input type="radio" class="btn-check" name="radio_flex_port" id="radio_no"
                                         value="No">
-                                    <label class="btn btn-outline-secondary" for="radio-no">No</label>
+                                    <label class="btn btn-outline-secondary" for="radio_no">No</label>
                                 </div>
                             </div>
                         </div>
@@ -269,17 +274,16 @@
 
                     <hr class="d-flex justify-content-center card-border">
 
-                    <div class="d-flex justify-content-between card-size p-5">
+                    <div class="d-flex justify-content-between card-size p-3">
                         <label class="p-2">Destination Address</label>
-                        <div class="shadow rounded form-card border-dark div-size">
+                        <div class="shadow rounded form-card border-dark div-size w-75">
                             <div class="form-group">
                                 <label class="bg-white" for="bookingNameField">Destination Address</label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend w-100">
                                         <span class="input-group-text" id="basic-addon1"><i
                                                 class="fa fa-search"></i></span>
-                                        <input type="text" placeholder="Search for destination address"
-                                            class="form-control" id="text_destination_address"
+                                        <input type="text" placeholder="Search for destination address" class="form-control" id="text_destination_address"
                                             aria-describedby="basic-addon1">
                                     </div>
                                 </div>
@@ -289,10 +293,10 @@
 
                     <hr class="d-flex justify-content-center card-border">
 
-                    <div class="d-flex justify-content-between card-size p-5">
+                    <div class="d-flex justify-content-between card-size p-3">
                         <label class="p-2 mt-1">Hazardous Materials
                         </label>
-                        <div class="shadow rounded form-card border-dark div-size">
+                        <div class="shadow rounded form-card border-dark div-size w-75">
 
                             <div class="form-group" id="check_group_hazardous_materials">
                                 <label class="bg-white" for="bookingNameField"><strong>Do any of your products contains
@@ -333,9 +337,9 @@
 
                     <hr class="d-flex justify-content-center card-border">
 
-                    <div class="d-flex justify-content-between card-size p-5">
+                    <div class="d-flex justify-content-between card-size p-3">
                         <label class="p-2 mt-1">Cargo Dropoff Date</label>
-                        <div class="shadow rounded form-card border-dark div-size">
+                        <div class="shadow rounded form-card border-dark div-size w-75">
                             <div class="form-group">
                                 <label class="bg-white" for="text_date_range"><strong>will your cargo be
                                         dropoff</strong></label>
@@ -345,15 +349,13 @@
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-end card-size p-5">
+                    <div class="d-flex justify-content-end card-size p-3">
                         <input type="submit" class="btn-submit" value="Submit" id="submit">
                     </div>
 
                 </fieldset>
-
             </div>
         </form>
-
     </div>
 
     <script type="text/javascript" src="javascript\shopify_form.js"></script>

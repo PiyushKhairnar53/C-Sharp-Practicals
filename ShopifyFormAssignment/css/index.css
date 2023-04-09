@@ -27,7 +27,7 @@ body {
     padding-top: 1.5%;
     padding-right: 1%;
     padding-left: 1%;
-    max-width: 60%;
+    width: 60%;
     background: #ffffff;
     border-radius: 10px;
 }
@@ -160,7 +160,7 @@ body {
 }
 
 .btn-submit {
-    background-color: #008b10 !important;
+    background-color: #008e11 !important;
     color: white !important;
     border-radius: 8px;
     margin-right: 2%;

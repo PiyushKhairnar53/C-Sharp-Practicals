@@ -29,45 +29,89 @@ function getFormValue(e) {
 
     var radios = document.getElementsByName('btnradio');
     var selectedIncoterm = "";
-    for (var i = 0; i < 3; i++)
-    {
-        if (radios[i].checked)
-        {
+    for (var i = 0; i < 3; i++) {
+        if (radios[i].checked) {
             selectedIncoterm = radios[i].value;
         }
-    }   
-    if (selectedIncoterm == null || selectedIncoterm == "") {
-        alert("Please select Incoterm");
-        return false;
     }
+
 
     var digits = /^[1-9]\d*$/g;
+
+    //less container
     const totalKg = document.getElementById("text_kg").value;
-    if (!totalKg.match(digits)) {
-        alert("Please enter a valid total weight");
-        return false;
-    }
-
     const totalCBM = document.getElementById("text_cbm").value;
-    if (!totalCBM.match(digits)) {
-        alert("Please enter a valid Total Volume");
-        return false;
-    }
-
     const selectPackageType = document.getElementById("select_package_type");
     var textSelectPackageType = selectPackageType.options[selectPackageType.selectedIndex].text;
-    if (textSelectPackageType == null || textSelectPackageType == "Select Package type") {
-        alert("Please Select a Package Type");
-        return false;
-    }
-
-
     const totalQuantity = document.getElementById("text_quantity").value;
 
-    if (!totalQuantity.match(digits)) {
-        alert("Please enter a valid Total Quantity");
-        return false;
+
+    //full container
+    const noOfContainer = document.getElementById("text_no_of_container").value;
+    const selectContainerType = document.getElementById("select_container_type");
+    var textSelectContainerType = selectContainerType.options[selectContainerType.selectedIndex].text;
+    const totalKgFullContainer = document.getElementById("text_kg_full_container").value;
+    const totalCBMFullContainer = document.getElementById("text_cbm_full_container").value;
+    const selectPackageTypeFullContainer = document.getElementById("select_package_type_full_container");
+    var textSelectPackageTypeFullContainer = selectPackageTypeFullContainer.options[selectPackageTypeFullContainer.selectedIndex].text;
+    const totalQuantityFullContainer = document.getElementById("text_quantity_full_container").value;
+
+    if (noOfContainer != "" && noOfContainer != null) {
+
+        if (!noOfContainer.match(digits)) {
+            alert("Please enter valid number of containers");
+            return false;
+        }
+
+        if (textSelectContainerType == "Select Container type") {
+            alert("Please select container type in full container");
+            return false;
+        }
+
+        if (!totalKgFullContainer.match(digits)) {
+            alert("Please enter valid container weight in full container");
+            return false;
+        }
+
+        if (!totalCBMFullContainer.match(digits)) {
+            alert("Please enter valid volume in full container");
+            return false;
+        }
+
+        if (textSelectPackageTypeFullContainer == null || textSelectPackageTypeFullContainer == "Select Package type") {
+            alert("Please Select a Package Type in full container");
+            return false;
+        }
+
+        if (!totalQuantityFullContainer.match(digits)) {
+            alert("Please enter valid total quantity in full container");
+            return false;
+        }
+
     }
+    else {
+        if (!totalKg.match(digits)) {
+            alert("Please enter valid container weight in less than container");
+            return false;
+        }
+
+        if (!totalCBM.match(digits)) {
+            alert("Please enter valid volume in less than container");
+            return false;
+        }
+
+        if (textSelectPackageType == null || textSelectPackageType == "Select Package type") {
+            alert("Please Select a Package Type in less than container");
+            return false;
+        }
+
+        if (!totalQuantity.match(digits)) {
+            alert("Please enter valid total quantity in less than container");
+            return false;
+        }
+    }
+
+
 
     const originAddress = document.getElementById("text_origin_address").value;
     if (originAddress == null || originAddress == "") {
@@ -91,13 +135,11 @@ function getFormValue(e) {
 
     var radio_flex_port = document.getElementsByName('radio_flex_port');
     var selectedFlexPort = "";
-    for (var i = 0; i < 2; i++)
-    {
-        if (radio_flex_port[i].checked)
-        {
+    for (var i = 0; i < 2; i++) {
+        if (radio_flex_port[i].checked) {
             selectedFlexPort = radio_flex_port[i].value;
         }
-    }   
+    }
 
     const text_destination_address = document.getElementById("text_destination_address").value;
     if (text_destination_address == null || text_destination_address == "") {
@@ -127,22 +169,34 @@ function getFormValue(e) {
     console.log("Consignee: " + textConsignee);
     console.log("Supplier: " + textSupplier);
     console.log("Incoterm: " + selectedIncoterm);
-    console.log("Total Weight: " + totalKg);
-    console.log("Total Volume: " + totalCBM);
-    console.log("Package Type: " + textSelectPackageType);
+
+    if (noOfContainer != "" && noOfContainer != null) {
+        console.log("Full container");
+        console.log("Number of Container : " + noOfContainer);
+        console.log("Container Type: " + textSelectContainerType)
+        console.log("Total Weight: " + totalKgFullContainer);
+        console.log("Total Volume: " + totalCBMFullContainer);
+        console.log("Package Type: " + textSelectPackageTypeFullContainer);
+        console.log("Total Quantity: " + totalQuantityFullContainer);
+    }
+    else {
+        console.log("Total Weight: " + totalKg);
+        console.log("Total Volume: " + totalCBM);
+        console.log("Package Type: " + textSelectPackageType);
+        console.log("Total Quantity: " + totalQuantity);
+    }
+
     console.log("Origin Address: " + originAddress);
     console.log("Origin Port : " + textSelectOriginPort);
-    console.log("Destination Address: " + selectedFlexPort);
+    console.log("Flexport selected : " + selectedFlexPort);
     console.log("Destination Address: " + text_destination_address);
     console.log("Material Selected : " + materials_checked);
     console.log("Cargo Date Range : " + text_date_range);
-
-
 }
 
-$(function() {
+$(function () {
     $('input[name="daterange"]').daterangepicker({
-      opens: 'left'
+        opens: 'left'
     })
 });
 
