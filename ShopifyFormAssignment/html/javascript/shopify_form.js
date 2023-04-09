@@ -165,6 +165,12 @@ function getFormValue(e) {
         return false;
     }
 
+    const text_date = document.getElementById("date_picker").value;
+    if (text_date == null || text_date == "") {
+        alert("Please Enter Date ");
+        return false;
+    }
+
     console.log("Booking Name: " + bookingName);
     console.log("Consignee: " + textConsignee);
     console.log("Supplier: " + textSupplier);
@@ -194,24 +200,25 @@ function getFormValue(e) {
     console.log("Cargo Date Range : " + text_date_range);
 }
 
-$(function () {
-    $('input[name="daterange"]').daterangepicker({
-        opens: 'left'
-    })
-});
 
-function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("myDropdown");
-    a = div.getElementsByTagName("a");
-    for (i = 0; i < a.length; i++) {
-        txtValue = a[i].textContent || a[i].innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
-        } else {
-            a[i].style.display = "none";
-        }
-    }
-}
+$(function () {
+    var today = new Date();
+    var currentYear = today.getFullYear();       
+    var currentMonth = today.getMonth();       
+    var currentDay = today.getDate();       
+
+    $('input[name="daterange"]').daterangepicker({
+        opens: 'left',
+        minDate:new Date(currentYear,currentMonth,currentDay),
+        maxDate:new Date(currentYear,currentMonth+1,currentDay),
+        placeholder:"select date range"
+    })
+
+    $('input[name="datepicker"]').datepicker({
+        opens: 'left',
+        minDate:new Date(currentYear,currentMonth,10),
+        maxDate:new Date(currentYear,currentMonth,30),
+        value:new Date(new Date().setDate(currentDay))
+    })
+
+});
