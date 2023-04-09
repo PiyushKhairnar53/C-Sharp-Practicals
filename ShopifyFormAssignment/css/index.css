@@ -13,6 +13,11 @@ body {
     margin-top: 10px;
 }
 
+.incoterms-btn-group {
+    margin-left: 3%;
+    border: 1px solid rgba(168, 166, 166, 0.726);
+}
+
 .required{
 	color:black;
 	font-weight:normal;
@@ -22,7 +27,7 @@ body {
     padding-top: 1.5%;
     padding-right: 1%;
     padding-left: 1%;
-    max-width: 50%;
+    max-width: 60%;
     background: #ffffff;
     border-radius: 10px;
 }
@@ -94,6 +99,11 @@ body {
     width: 100%; margin-top: 10px;
 }
 
+.form-margin{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
 .form-card input[type = "text"]:focus,
 .form-card input[type = "date"]:focus,
 .form-card input[type = "datetime"]:focus,
@@ -149,7 +159,15 @@ body {
     padding-bottom: 1%;
 }
 
-.incoterms-btn-group {
-   margin-left: 3%;    
-   border: 1px solid rgba(168, 166, 166, 0.726);
+.btn-submit {
+    background-color: #008b10 !important;
+    color: white !important;
+    border-radius: 8px;
+    margin-right: 2%;
+    float: right;
+    border-color: #fff;
+    width: 20% !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   
 }
