@@ -6,10 +6,12 @@
 
 body { 
     font-family: 'Open Sans', sans-serif;
- }
+}
 
-
-
+.title-create{
+    margin-left: 16%; 
+    margin-top: 10px;
+}
 
 .required{
 	color:black;
@@ -20,7 +22,6 @@ body {
     padding-top: 1.5%;
     padding-right: 1%;
     padding-left: 1%;
-
     max-width: 50%;
     background: #ffffff;
     border-radius: 10px;
@@ -57,6 +58,7 @@ body {
     background-color: #ffffff;
 
 }
+
 .form-card input[type = "date"],
 .form-card input[type = "datetime"],
 .form-card input[type = "email"],
@@ -77,8 +79,6 @@ body {
     background-color: #ffffff;
     margin-bottom: 30px;
 }
-
-
 
 .div-size{
     margin-left: 10%; 
@@ -144,7 +144,12 @@ body {
     background-color: rgb(111, 111, 243);;
 }
 
-.radio-btn-group{
-    background-color: white;
-    color: black;
+.field-header {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.incoterms-btn-group {
+   margin-left: 3%;    
+   border: 1px solid rgba(168, 166, 166, 0.726);
 }
