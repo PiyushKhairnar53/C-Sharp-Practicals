@@ -1,0 +1,359 @@
+<html>
+
+<head>
+    <title>ShopifyForm</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+        
+</head>
+
+<body>
+
+    <div>
+        <form class="pure_form" onsubmit="getFormValue(event)">
+            <h4 style="margin-left: 16%; margin-top: 10px;">Create Booking</h4>
+            <fieldset>
+                <div class="d-flex justify-content-center card-size">
+                    <label class="p-2 mt-1">Booking Name</label>
+                    <div class="shadow rounded form-card border-dark div-size w-75" >
+                        <div class="form-group">
+                            <label class="bg-white" for="booking_name">Booking Name </label>
+                            <input type="text" placeholder="Description of Shipment" class="form-control" id="booking_name">
+                          </div>
+                    </div>
+                </div>
+
+                <hr class="d-flex justify-content-center card-border">
+
+                <div class="d-flex justify-content-center card-size">
+                    <label class="p-2 mt-1">Involved Parties</label>
+                    <div class="shadow rounded form-card border-dark div-size w-75">
+                        <div class="form-group">
+                            <label class="bg-white" for="bookingNameField">Consignee <i class="fa fa-question-circle"></i></label>
+                            <select class="user-select-all bg-white" id="select_consignee">
+                                <option selected>Select Consignee</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+
+                            <label class="bg-white" for="bookingNameField">Supplier</label>
+                            <select class="user-select-all bg-white mb-3" id="select_supplier">
+                                <option selected>Select Supplier</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+
+                            <label class="text-primary mb-2">
+                                <a href="#">Create new Supplier</a>
+                            </label>
+
+                            <div >
+                                <label>Incoterms <i class="fa fa-question-circle"></i></label>
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons" id="radio_incoterms">
+                                    <label class="btn border-secondary">
+                                    <input type="radio" class="btn-check" name="options" id="EXW" autocomplete="off" checked>EXW
+                                    </label>
+                                    <label class="btn border-secondary">
+                                    <input type="radio" class="btn-check" name="options" id="FOB" autocomplete="off">FOB
+                                    </label>
+                                    <label class="btn border-secondary">
+                                    <input type="radio" class="btn-check" name="options" id="FCA" autocomplete="off" checked>FCA
+                                    </label>
+                              </div>
+
+                              <label class="mt-3"><a class="text-primary">Contact us</a> if you can not find your incoterms</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="d-flex justify-content-center card-border">
+
+                <div class="d-flex justify-content-center card-size">
+                    <label class="p-2 mt-1">Cargo Details</label>
+                    <div class="shadow rounded form-card border-dark w-75" style="margin-left: 10%; width: 50%;">
+                        <div class="form-group">
+                           
+                            <div class="container w-100">
+                                <div class="row">
+                                <div class="col">
+                                    <nav>
+                                        <div class="nav nav-tabs nav-fill justify-content-between" id="nav-tab" role="tablist">
+                                            <a class="nav-item nav-link active " role="tab" aria-selected="true" href="#1" data-toggle="tab">
+                                            <h4 class="text-success size">Less than container</h4>
+                                            </a>
+                                            <a class="nav-item nav-link " href="#2" role="tab" aria-selected="false" data-toggle="tab">
+                                            <h4 class="text-success size">Full containers</h4>
+                                            </a>
+                                        </div>
+                                    </nav>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="1">
+                                            <div class="row justify-content-between mt-4">
+                                                <div class="col">
+                                                    <label class="bg-white" for="text_kg">Total weight</label>
+                                                    <input type="number" placeholder="kg" class="form-control text-right" id="text_kg">
+                                                </div>
+                                                <div class="col">
+                                                    <label class="bg-white" for="text_cbm">Total volume</label>
+                                                    <input type="number" placeholder="cbm" class="form-control text-right" id="text_cbm">
+                                                </div>
+                                            </div>
+
+                                            <div class="row justify-content-between mt-4">
+                                                <div class="col">
+                                                    <label class="bg-white" for="select_package_type">Package type</label>
+                                                    <select class="user-select-all bg-white mb-3" id="select_package_type">
+                                                        <option selected>Select Package type</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col">
+                                                    <label class="bg-white" for="text_quantity">Total Quantity</label>
+                                                    <input type="number" class="form-control" id="text_quantity">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="2">
+                                            <div class="row justify-content-between mt-4">
+                                                <div class="col">
+                                                    <label class="bg-white" for="text_kg">Number of containers</label>
+                                                    <input type="number" placeholder="kg" class="form-control text-right" id="text_no_of_container">
+                                                </div>
+                                                <div class="col">
+                                                    <label class="bg-white" for="text_cbm">Container Type</label>
+                                                    <input type="number" placeholder="cbm" class="form-control text-right" id="text_container_type">
+                                                </div>
+                                            </div>
+
+                                            <div class="row justify-content-between mt-4">
+                                                <div class="col">
+                                                    <label class="bg-white" for="text_kg">Total weight</label>
+                                                    <input type="number" placeholder="kg" class="form-control text-right" id="text_kg_full_container">
+                                                </div>
+                                                <div class="col">
+                                                    <label class="bg-white" for="text_cbm">Total volume</label>
+                                                    <input type="number" placeholder="cbm" class="form-control text-right" id="text_cbm_full_container">
+                                                </div>
+                                            </div>
+
+                                            <div class="row justify-content-between mt-4">
+                                                <div class="col">
+                                                    <label class="bg-white" for="select_package_type">Package type</label>
+                                                    <select class="user-select-all bg-white mb-3" id="select_package_type_full_container">
+                                                        <option selected>Select Package type</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col">
+                                                    <label class="bg-white" for="text_quantity">Total Quantity</label>
+                                                    <input type="number" class="form-control" id="text_quantity_full_container">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="d-flex justify-content-center card-border">
+
+                <div class="d-flex justify-content-center card-size">
+                    <label class="p-2 mt-1">Origin Address</label>
+                    <div class="shadow rounded form-card border-dark div-size" >
+                        <div class="form-group">
+                            <label class="bg-white" for="text_origin_address">Origin Address</label>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend w-100">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                                                         
+                                <input type="text" placeholder="Search for origin address" class="form-control" id="text_origin_address" aria-describedby="basic-addon1">
+                            </div>     
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="d-flex justify-content-center card-border">
+
+                <div class="d-flex justify-content-center card-size">
+                    <label class="p-2 mt-1">Origin Port</label>
+                    <div class="shadow rounded form-card border-dark div-size" >
+                        <div class="form-group">
+                            <label class="bg-white" for="select_zipcode">Zipcode</label>
+                            <select class="user-select-all bg-white mb-3" id="select_zipcode">
+                                <option selected>Select zipcode</option>
+                                <option value="1">413709</option>
+                                <option value="2">455005</option>
+                                <option value="3">356789</option>
+                            </select>
+                          </div>
+                    </div>
+                </div>
+
+                <hr class="d-flex justify-content-center card-border">
+
+                <div class="d-flex justify-content-center card-size">
+                    <label class="p-2 mt-1">Origin trucking services</label>
+                    <div class="shadow rounded form-card border-dark div-size" >
+                        <div class="form-group">
+                            <label class="bg-white" for="bookingNameField"><strong>Will you need Flexport Origin Trucking Services (origin to port)?</strong></label>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons" id="radio_need_port">
+                                <label class="btn border-secondary">
+                                <input type="radio" class="btn-check" name="options" id="EXW" autocomplete="off" checked>Yes
+                                </label>
+                                <label class="btn border-secondary ml-2">
+                                <input type="radio" class="btn-check" name="options" id="FCA" autocomplete="off" checked>No
+                                </label>
+                          </div>
+                          </div>
+                    </div>
+                </div>
+
+                <hr class="d-flex justify-content-center card-border">
+
+                <div class="d-flex justify-content-center card-size">
+                    <label class="p-2 mt-1">Destination Address</label>
+                    <div class="shadow rounded form-card border-dark div-size" >
+                        <div class="form-group">
+                            <label class="bg-white" for="bookingNameField">Destination Address</label>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend w-100">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                                    
+                                    <div id="myDropdown" class="dropdown-content">
+                                        <input type="text" class="w-100" placeholder="Search.." id="text_destination_address" onkeyup="filterFunction()">
+                                        <a href="#about">About</a>
+                                        <a href="#base">Base</a>
+                                        <a href="#blog">Blog</a>
+                                        <a href="#contact">Contact</a>
+                                        <a href="#custom">Custom</a>
+                                        <a href="#support">Support</a>
+                                        <a href="#tools">Tools</a>
+                                      </div>
+                                    
+                                <!-- <input type="text" placeholder="Search for destination address" class="form-control" id="email" aria-describedby="basic-addon1"> -->
+                            </div>     
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="d-flex justify-content-center card-border">
+
+                <div class="d-flex justify-content-center card-size">
+                    <label class="p-2 mt-1">Hazardous Materials
+                    </label>
+                    <div class="shadow rounded form-card border-dark div-size" >
+                        <div class="form-group" id="check_group_hazardous_materials">
+                            <label class="bg-white" for="bookingNameField"><strong>Do any of your products contains the following ?</strong></label>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check_batteries">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Batteries
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check_haz_materials" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  Hazardous Materials
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check_creams" >
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Creams,liquids,Powders 
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check_none" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  None of the above
+                                </label>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="d-flex justify-content-center card-border">
+
+                <div class="d-flex justify-content-center card-size">
+                    <label class="p-2 mt-1">Cargo Dropoff Date</label>
+                    <div class="shadow rounded form-card border-dark div-size" >
+                        <div class="form-group">
+                            <label class="bg-white" for="text_date_range"><strong>will your cargo be dropoff</strong></label>
+                            <p class="mt-3">Click on field to select date range</p>
+                            <input type="text" name="daterange" id="text_date_range"/>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <input type="submit" value="Submit" id="submit">
+
+
+            </fieldset>
+        </form>
+
+    </div>
+
+    <script>
+    $(function() {
+      $('input[name="daterange"]').daterangepicker({
+        opens: 'left'
+      })
+    });
+
+    function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        a[i].style.display = "";
+        } else {
+        a[i].style.display = "none";
+        }
+    }
+    }
+    </script>
+
+    <script type="text/javascript" src="javascript\shopify_form.js"></script>
+
+    
+</body>
+</html>
+

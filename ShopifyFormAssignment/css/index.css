@@ -1,0 +1,150 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+*{
+    background-color: #f8f8ff;
+}
+
+body { 
+    font-family: 'Open Sans', sans-serif;
+ }
+
+
+
+
+.required{
+	color:black;
+	font-weight:normal;
+}
+
+.form-card{
+    padding-top: 1.5%;
+    padding-right: 1%;
+    padding-left: 1%;
+
+    max-width: 50%;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.form-card fieldset{
+    border: none;
+}
+
+.form-card progress{
+    width: 100%;
+}
+
+.form-card legend{
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-card label{
+    display: block;
+    margin-bottom: 8px;
+}
+
+
+.form-card input[type = "text"]{
+    font-size: 15px;
+    margin: 0;
+    outline: 0;
+    border-radius: 4px;
+    border-color: rgb(235, 235, 235);
+    padding: 10px;
+    width: 100%;
+    background-color: #ffffff;
+
+}
+.form-card input[type = "date"],
+.form-card input[type = "datetime"],
+.form-card input[type = "email"],
+.form-card input[type = "numbert"],
+.form-card input[type = "search"],
+.form-card input[type = "time"],
+.form-card input[type = "url"],
+.form-card textarea,
+.form-card select{
+    border-radius: 5px;
+    font-size: 15px;
+    margin-right : 3px;
+    outline: 0;
+    padding: 10px;
+    border-color: #b9b9b9;
+    width: 100%;
+    color: #6f6f6f;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+}
+
+
+
+.div-size{
+    margin-left: 10%; 
+    width: 50%;
+}
+
+.card-border{
+    margin-left: 15%; 
+    margin-right: 15%;
+}
+
+.card-size{
+    width: 100%; margin-top: 10px;
+}
+
+.form-card input[type = "text"]:focus,
+.form-card input[type = "date"]:focus,
+.form-card input[type = "datetime"]:focus,
+.form-card input[type = "email"]:focus,
+.form-card input[type = "number"]:focus,
+.form-card input[type = "search"]:focus,
+.form-card input[type = "time"]:focus,
+.form-card input[type = "url"]:focus,
+.form-card textarea:focus,
+.form-card select:focus{
+    background: white;
+    color: black;
+}
+
+.form-card .number{
+    background: rgb(111, 111, 243);;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.form-card input[type="submit"],
+.form-card input[type="button"]{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #fff;
+    margin: 0 auto;
+    background: rgb(111, 111, 243);;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid rgb(111, 111, 243);;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+
+.form-card input[type="submit"],
+.form-card input[type="button"]{
+    background-color: rgb(111, 111, 243);;
+}
+
+.radio-btn-group{
+    background-color: white;
+    color: black;
+}
