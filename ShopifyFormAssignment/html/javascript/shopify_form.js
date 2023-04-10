@@ -56,7 +56,7 @@ function getFormValue(e) {
     var textSelectPackageTypeFullContainer = selectPackageTypeFullContainer.options[selectPackageTypeFullContainer.selectedIndex].text;
     const totalQuantityFullContainer = document.getElementById("text_quantity_full_container").value;
 
-    if (noOfContainer != "" && noOfContainer != null) {
+    if (noOfContainer != "" && noOfContainer != null || textSelectContainerType != "Select Container type") {
 
         if (!noOfContainer.match(digits)) {
             alert("Please enter valid number of containers");
@@ -110,7 +110,6 @@ function getFormValue(e) {
             return false;
         }
     }
-
 
 
     const originAddress = document.getElementById("text_origin_address").value;
