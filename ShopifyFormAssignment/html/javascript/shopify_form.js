@@ -111,7 +111,6 @@ function getFormValue(e) {
         }
     }
 
-
     const originAddress = document.getElementById("text_origin_address").value;
     if (originAddress == null || originAddress == "") {
         alert("Please Select an Origin Address");
@@ -157,18 +156,12 @@ function getFormValue(e) {
         }
     }
 
-
     const text_date_range = document.getElementById("text_date_range").value;
     if (text_date_range == null || text_date_range == "") {
         alert("Please Enter Date range");
         return false;
     }
 
-    const text_date = document.getElementById("date_picker").value;
-    if (text_date == null || text_date == "") {
-        alert("Please Enter Date ");
-        return false;
-    }
 
     console.log("Booking Name: " + bookingName);
     console.log("Consignee: " + textConsignee);
@@ -185,6 +178,7 @@ function getFormValue(e) {
         console.log("Total Quantity: " + totalQuantityFullContainer);
     }
     else {
+        console.log("Less than container");
         console.log("Total Weight: " + totalKg);
         console.log("Total Volume: " + totalCBM);
         console.log("Package Type: " + textSelectPackageType);
@@ -212,12 +206,4 @@ $(function () {
         maxDate:new Date(currentYear,currentMonth+1,currentDay),
         placeholder:"select date range"
     })
-
-    // $('input[name="datepicker"]').datepicker({
-    //     opens: 'left',
-    //     minDate:new Date(currentYear,currentMonth,10),
-    //     maxDate:new Date(currentYear,currentMonth,30),
-    //     value:new Date(new Date().setDate(currentDay))
-    // })
-
 });
